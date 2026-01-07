@@ -56,6 +56,8 @@ Mention the vault file that has password within playbook as "  vars_files: bigip
 
 It’s a good idea to use no_log on any task that interacts with sensitive data. You should also be aware of its limitations: It will not prevent logging if Ansible debugging is turned on.
 
+3- Modify hosts file with remote nodes
 
 
-Command to run to take backups: ansible-playbook /home/ansible/BIGIP/bigip_backup.yml -i /home/ansible/BIGIP/hosts --vault-password-file /home/ansible/BIGIP/variable_files/.vault.pass.txt
+
+Command to run to take backups: ansible-playbook /home/ansible/BIGIP/bigip_backup.yml -i /home/ansible/BIGIP/variable_files/hosts --vault-password-file /home/ansible/BIGIP/variable_files/.vault.pass.txt

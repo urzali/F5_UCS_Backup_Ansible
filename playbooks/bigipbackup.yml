@@ -1,0 +1,17 @@
+---
+- hosts: BIGIPS
+  gather_facts: False
+  vars_files: bigip_pass
+  vars:
+    dayofweek: "{{ lookup('pipe', 'date +\"%A\"') }}"
+  tasks:
+    - name: Download a new UCS
+      bigip_ucs_fetch:
+        src: cs_backup.ucs
+        dest: /root/BIGIP/Bigip_backup/"{{ inventory_hostname + '-' +  dayofweek + '-backup.ucs' }}"
+        provider:
+          user: "{{ username }}"
+          password: "{{ password }}"
+          validate_certs: False
+          server: "{{ inventory_hostname }}"
+      delegate_to: localhost

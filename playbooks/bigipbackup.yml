@@ -1,4 +1,4 @@
----
+et---
 - hosts: BIGIPS
   gather_facts: False
   vars_files: bigip_pass
@@ -11,7 +11,7 @@
         dest: /root/BIGIP/Bigip_backup/"{{ inventory_hostname + '-' +  dayofweek + '-backup.ucs' }}"
         provider:
           user: "{{ username }}"
-          password: "{{ password }}"
+          password: "{{ Secret password }}"
           validate_certs: False
           server: "{{ inventory_hostname }}"
       delegate_to: localhost

@@ -1,4 +1,4 @@
-et---
+etet---
 - hosts: BIGIPS
   gather_facts: False
   vars_files: bigip_pass.yml
@@ -10,7 +10,7 @@ et---
         src: cs_backup.ucs
         dest: /root/BIGIP/Bigip_backup/"{{ inventory_hostname + '-' +  dayofweek + '-backup.ucs' }}"
         provider:
-          user: "{{ username }}"
+          user: "{{ Secret username }}"
           password: "{{ Secret password }}"
           validate_certs: False
           server: "{{ inventory_hostname }}"

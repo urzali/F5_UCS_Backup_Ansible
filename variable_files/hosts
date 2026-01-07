@@ -1,0 +1,10 @@
+[BIGIPS]
+BIGIP-STAG ansible_host=10.10.10.1
+BIGIP-PROD ansible_host=10.10.10.2
+BIGIP-COOP ansible_host=10.10.10.3
+
+[BIGIP_STG]
+BIGIP-STAGING ansible_host=10.10.10.1
+
+[BIGIP_PROD]
+BIGIP-COOP ansible_host=10.10.10.10.2

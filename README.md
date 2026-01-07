@@ -33,16 +33,16 @@ i- Run your playbook and have prompted for the password.
 ansible-playbook vault-test.yml --ask-vault-pass
 
 ii- Store the vault password in file and tell ansible where that file is
-ansible-playbook vault-test.yml --vault-password-file vault.pass.txt
+ansible-playbook vault-test.yml --vault-password-file /variable_files/vault.pass.txt
 
 make sure you save the vault.pass.txt with proper creds access so no one else can open it.
 
 iii- Specify the location of a password file in ansible.cfg
 
-vault_password_file = vault-pass.txt
+vault_password_file = /variable_files/vault-pass.txt
 
 
-Decrypt file: ansible-vault decrypt bigip_pass
+Decrypt file: ansible-vault decrypt bigip_pass // will prompt you to put vault password
 Rekey: ansible-vault rekey bigip_pass 
 
 
@@ -58,4 +58,4 @@ It’s a good idea to use no_log on any task that interacts with sensitive data.
 
 
 
-Command to run to take backups: ansible-playbook /home/ansible/BIGIP/bigip_backup.yml -i /home/ansible/BIGIP/hosts --vault-password-file /home/ansible/BIGIP/.vault.pass.txt
+Command to run to take backups: ansible-playbook /home/ansible/BIGIP/bigip_backup.yml -i /home/ansible/BIGIP/hosts --vault-password-file /home/ansible/BIGIP/variable_files/.vault.pass.txt

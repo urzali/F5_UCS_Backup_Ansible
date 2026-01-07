@@ -1,7 +1,7 @@
 et---
 - hosts: BIGIPS
   gather_facts: False
-  vars_files: bigip_pass
+  vars_files: bigip_pass.yml
   vars:
     dayofweek: "{{ lookup('pipe', 'date +\"%A\"') }}"
   tasks:

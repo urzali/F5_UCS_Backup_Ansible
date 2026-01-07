@@ -16,7 +16,7 @@ a- Create a file and add your password there:
 /
 vi bigip_pass
 …
-password: “enteryourpasswordhere”
+Secret password: “enteryourpasswordhere”
 /
 
 b- Run below command in terminal:
@@ -48,7 +48,7 @@ Rekey: ansible-vault rekey bigip_pass
 
 In the playbook, mention the password as such:
 
-password: { { password } }
+Secret password: { { password } }
 
 // Secret password is the variable where the password is stored
 
